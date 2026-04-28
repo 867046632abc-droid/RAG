@@ -1,0 +1,15 @@
+{
+  "stage": "completed",
+  "updated_at": "2026-04-27T13:31:17",
+  "sample_count": 10,
+  "build_samples_seconds": 304.3,
+  "evaluate_ragas_seconds": 159.9,
+  "total_seconds": 467.19,
+  "outputs": {
+    "result_dir": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第15次结果-reranker-coexist",
+    "cases": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第15次结果-reranker-coexist\\graph2_ragas_testcases_20260427_133114.json",
+    "cases_only": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第15次结果-reranker-coexist\\graph2_ragas_cases_only_20260427_133114.json",
+    "detail": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第15次结果-reranker-coexist\\graph2_ragas_detail_20260427_133114.csv",
+    "summary": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第15次结果-reranker-coexist\\graph2_ragas_summary_20260427_133114.json"
+  }
+}

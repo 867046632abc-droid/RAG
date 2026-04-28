@@ -1,0 +1,31 @@
+{
+  "sample_count": 10,
+  "faithfulness": {
+    "mean": 0.9222,
+    "std": 0.1716,
+    "min": 0.5,
+    "max": 1.0,
+    "pass_rate": 0.8
+  },
+  "answer_relevancy": {
+    "mean": 0.8701,
+    "std": 0.3085,
+    "min": 0.0,
+    "max": 1.0,
+    "pass_rate": 0.9
+  },
+  "context_precision": {
+    "mean": 0.8639,
+    "std": 0.3128,
+    "min": 0.0,
+    "max": 1.0,
+    "pass_rate": 0.9
+  },
+  "context_recall": {
+    "mean": 0.9,
+    "std": 0.3162,
+    "min": 0.0,
+    "max": 1.0,
+    "pass_rate": 0.9
+  }
+}

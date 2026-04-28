@@ -1,0 +1,5 @@
+{
+  "stage": "failed",
+  "updated_at": "2026-04-25T21:45:18",
+  "error": "BadRequestError(\"Error code: 400 - {'error': {'message': 'invalid model ID', 'type': 'invalid_request_error', 'param': None, 'code': None}}\")"
+}
