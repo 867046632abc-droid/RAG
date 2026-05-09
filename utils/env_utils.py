@@ -6,8 +6,13 @@ load_dotenv(override=True)
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+QWEN_API_KEY=os.getenv('QWEN_API_KEY')
+SEED_API_KEY=os.getenv('SEED_API_KEY')
 
-MILVUS_URI = 'http://47.120.10.76:19530'
+_raw_milvus_uri = os.getenv('MILVUS_URI', '47.121.139.76:19530')
+if '://' not in _raw_milvus_uri and not _raw_milvus_uri.endswith('.db'):
+    _raw_milvus_uri = f"tcp://{_raw_milvus_uri}"
+MILVUS_URI = _raw_milvus_uri
 
 COLLECTION_NAME = 't_collection01'
 

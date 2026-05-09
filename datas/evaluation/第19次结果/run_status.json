@@ -1,0 +1,5 @@
+{
+  "stage": "failed",
+  "updated_at": "2026-05-07T18:20:16",
+  "error": "RateLimitError(\"Error code: 429 - {'error': {'message': 'You have exceeded your current request limit. For details, see: https://help.aliyun.com/zh/model-studio/error-code#rate-limit', 'type': 'limit_requests', 'param': None, 'code': 'limit_requests'}, 'request_id': 'ad5c3ea7-a17d-9eee-b716-3e7dbe04f0ed'}\")"
+}

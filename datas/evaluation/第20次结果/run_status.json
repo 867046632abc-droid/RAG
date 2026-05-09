@@ -1,0 +1,5 @@
+{
+  "stage": "failed",
+  "updated_at": "2026-05-07T18:29:46",
+  "error": "NotFoundError(\"Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2126115225) has not activated the model doubao-seed-2-0-lite-260215. Please activate the model service in the Ark Console. Request id: 021778149785839b6043c5851c0a2627b25b78c406cf304fec1a2', 'param': '', 'type': 'Not Found'}}\")"
+}

@@ -57,7 +57,7 @@ class MilvusVectorSave:
         index_params.add_index(
             field_name="dense",
             index_name="dense_inverted_index",
-            index_type=IndexType.HNSW,  # Inverted index type for sparse vectors
+            index_type=IndexType.HNSW,  # FLAT极致精度但慢,DISKANN耗内存
             metric_type=MetricType.IP,
             params={"M": 35, "efConstruction": 200}  # M :邻接节点数, efConstruction: 搜索范围
         )

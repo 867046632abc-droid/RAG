@@ -7,7 +7,7 @@ from pprint import pprint
 from langgraph.constants import START, END
 from langgraph.graph import StateGraph
 
-from draw_png import draw_graph
+from utils.draw_png import draw_graph
 from graph2.generate_node2 import generate
 from graph2.graph_2 import (
     grade_generation_v_documents_and_question,

@@ -10,7 +10,7 @@ retriever = mv.vector_store_saved.as_retriever(
     search_type="similarity",
     search_kwargs={
         "k": 10,
-        "ranker_type": "rrf",
+        "ranker_type": "rrf",                                           #融合重排
         "ranker_params": {"k": 60},
         "filter": {"category": "content"},
     },

@@ -1,0 +1,15 @@
+{
+  "stage": "completed",
+  "updated_at": "2026-04-28T17:17:47",
+  "sample_count": 10,
+  "build_samples_seconds": 38.58,
+  "evaluate_ragas_seconds": 193.12,
+  "total_seconds": 233.44,
+  "outputs": {
+    "result_dir": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第17次结果",
+    "cases": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第17次结果\\graph2_ragas_testcases_20260428_171746.json",
+    "cases_only": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第17次结果\\graph2_ragas_cases_only_20260428_171746.json",
+    "detail": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第17次结果\\graph2_ragas_detail_20260428_171746.csv",
+    "summary": "C:\\Users\\20661\\Desktop\\myproject\\RAG_PROJECT\\RAG_PROJECT\\datas\\evaluation\\第17次结果\\graph2_ragas_summary_20260428_171746.json"
+  }
+}

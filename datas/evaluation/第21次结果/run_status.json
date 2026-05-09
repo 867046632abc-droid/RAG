@@ -1,0 +1,5 @@
+{
+  "stage": "failed",
+  "updated_at": "2026-05-07T18:34:24",
+  "error": "NotFoundError(\"Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(MISSING) has not activated the model %!s(MISSING). Please activate the model service in the Ark Console. Request id: 0217781500579207102683077850128b6fd56cdd45d9b14cc1c41', 'param': '', 'type': 'Not Found'}}\")"
+}

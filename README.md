@@ -8,16 +8,19 @@
 - 生成后事实一致性与答案可用性校验
 - 可切换的 Reranker 实验方案（replace / coexist）
 - 批量评测与 badcase 分析
+- **多模态检索**（图片 / 视频帧入库 + 视频生成节点）
+- **Gradio 可视化前端**（支持文字 + 语音提问）
 
 ---
 
 ## 1. 项目目标
 
-围绕真实技术文档（`datas/md`）构建一个可迭代的 RAG 系统，不只追求“能回答”，而是追求：
+围绕真实技术文档（`datas/md`、`datas/PDF`）构建一个可迭代的 RAG 系统，不只追求“能回答”，而是追求：
 
 - 可复现：数据入库、检索、生成、评测链路可一键跑通
 - 可解释：每轮评测都有指标、样本、坏例分析输出
 - 可迭代：支持多种图流程 A/B 对比（原版 / reranker 替换 / reranker 并存）
+- 可演示：支持 Gradio 端到端 Demo，并可在回答后生成讲解视频
 
 ---
 
@@ -26,7 +29,7 @@
 主流程在 [`graph2/graph_2.py`](graph2/graph_2.py)：
 
 1. `route_question`：先判断走 `vectorstore` 还是 `web_search`
-2. `retrieve`：从 Milvus 混合检索召回候选文档
+2. `retrieve`：从 Milvus 混合检索（dense + BM25）召回候选文档
 3. `grade_documents`：用 LLM 对文档相关性做二分类过滤
 4. `generate`：基于上下文生成答案
 5. `grade_generation_v_documents_and_question`：检查幻觉与答题有效性
@@ -37,17 +40,25 @@ Reranker 实验版：
 - `graph2/graph_2_replace.py`：`retrieve -> rerank -> generate`
 - `graph2/graph_2_coexist.py`：`retrieve -> rerank -> grade_documents -> generate`
 
+多模态扩展：
+
+- `multimodal_RAG/graph_video.py`：将 `graph2` 作为黑盒整体 `run_rag`，
+  在文字回答后按需进入 `video_generate` 节点，输出讲解视频
+- `multimodal_RAG/multimodal_ingest.py`：图片 / 视频帧统一入库到 Milvus
+
 ---
 
 ## 3. 技术栈
 
 - LLM 编排：`langchain`, `langgraph`
 - 向量数据库：`Milvus`（dense + sparse/BM25）
-- 向量模型：
-  - dense：`BAAI/bge-base-zh-v1.5`
+- 模型：
+  - dense embedding：`BAAI/bge-base-zh-v1.5`
   - reranker：`BAAI/bge-reranker-v2-m3`
 - Web 检索：`Tavily`
 - 评测：`RAGAS`（faithfulness / answer_relevancy / context_precision / context_recall）
+- 多模态：图片解析、视频按帧采样、视频生成（Sora / Kling 可切换）
+- 前端：`Gradio` + `Whisper` 语音识别
 - 可视化：`matplotlib`
 
 ---
@@ -58,7 +69,7 @@ Reranker 实验版：
 
 建议：
 
-- Python `3.10 - 3.12`
+- Python `3.10 - 3.13`
 - 可访问 Milvus 服务
 - 可用的 OpenAI / Tavily Key
 
@@ -75,50 +86,80 @@ pip install -r requirements.txt
 - `.env` 中至少包含：
   - `OPENAI_API_KEY`
   - `DEEPSEEK_API_KEY`（可选）
+  - `TAVILY_API_KEY`
 
 另外请确认以下配置符合你的环境：
 
 - `MILVUS_URI`（Milvus 地址）
 - `COLLECTION_NAME`（集合名）
-- `TAVILY_API_KEY`
 
 > 建议：把所有密钥与 URI 都迁移到 `.env`，避免硬编码。
 
-### 4.3 数据入库（Markdown -> Milvus）
+### 4.3 数据入库
 
-脚本：[`documents/write_milvus.py`](documents/write_milvus.py)
+文本（Markdown -> Milvus），脚本：[`documents/write_milvus.py`](documents/write_milvus.py)
 
 ```bash
 python -m documents.write_milvus
 ```
 
-该脚本会：
+该脚本会扫描 `datas/md/*.md` → 解析并语义切块（`MarkdownParser`） → 写入 Milvus。
 
-- 扫描 `datas/md/*.md`
-- 解析并语义切块（`MarkdownParser`）
-- 写入 Milvus 集合
+多模态（图片 / 视频 -> Milvus）：
+
+```python
+from multimodal_RAG.multimodal_ingest import MultimodalIngest
+
+ingest = MultimodalIngest(frame_interval_sec=30)
+ingest.ingest_image("datas/image_input/foo.png")
+ingest.ingest_video("datas/videos_output/bar.mp4")
+ingest.ingest_directory("datas/image_input")
+```
+
+支持扩展名：图片 `.jpg/.jpeg/.png/.gif/.webp/.bmp`，视频 `.mp4/.avi/.mov/.mkv/.flv/.wmv`。
 
 ---
 
 ## 5. 运行问答系统
 
-### 5.1 原版流程（grader）
+### 5.1 命令行：原版流程（grader）
 
 ```bash
 python -m graph2.graph_2
 ```
 
-### 5.2 Reranker 替换 grader
+### 5.2 命令行：Reranker 替换 grader
 
 ```bash
 python -m graph2.graph_2_replace
 ```
 
-### 5.3 Reranker 与 grader 并存
+### 5.3 命令行：Reranker 与 grader 并存
 
 ```bash
 python -m graph2.graph_2_coexist
 ```
+
+### 5.4 命令行：多模态（文字回答 + 视频生成）
+
+```bash
+python -m multimodal_RAG.graph_video
+```
+
+可在问题中显式带 “生成视频/制作视频/动画讲解” 等关键词触发视频节点；
+也可在状态里显式传 `video_requested=True`，以及 `video_provider="sora" | "kling"`。
+
+### 5.5 Gradio Web Demo
+
+```bash
+python app_graph2.py
+# 浏览器打开 http://127.0.0.1:7860
+```
+
+支持：
+
+- 文字提问 → 实时显示节点执行轨迹 + 最终答案
+- 语音提问 → Whisper 转文字 → 自动提交问答
 
 ---
 
@@ -168,16 +209,19 @@ python -m datas.evaluation.visualize_evaluation
 
 ---
 
-## 7. 当前结果（示例）
+## 7. 当前结果（最新一次评测）
 
-来自 `datas/evaluation/第16次结果/graph2_ragas_summary_20260427_133708.json`：
+来自 `datas/evaluation/第22次结果/graph2_ragas_summary_20260507_184444.json`（10 样本）：
 
-- `faithfulness`: `1.0000`
-- `answer_relevancy`: `0.8741`
-- `context_precision`: `0.9944`
-- `context_recall`: `0.8750`
+| 指标 | mean | min | max | pass_rate |
+| ---- | ---- | --- | --- | --------- |
+| `faithfulness`        | 0.9573 | 0.7778 | 1.0 | 1.00 |
+| `answer_relevancy`    | 0.8774 | 0.8163 | 0.92 | 1.00 |
+| `context_precision`   | 0.8139 | 0.3250 | 1.0 | 0.60 |
+| `context_recall`      | 0.8167 | 0.0000 | 1.0 | 0.80 |
 
-可用于展示“系统在忠实性和上下文精度上的稳定性，以及召回侧仍有优化空间”。
+历史最佳曾达到（第 16 次）：`faithfulness 1.0000 / answer_relevancy 0.8741 / context_precision 0.9944 / context_recall 0.8750`。
+当前忠实性与相关性稳定，**召回与上下文精度仍是主要优化空间**。
 
 ---
 
@@ -191,6 +235,14 @@ RAG_PROJECT/
 │  ├─ graph_2_coexist.py         # reranker + grader 并存
 │  ├─ ragas_eval.py              # 批量评测主脚本
 │  └─ test_ragas_parallel.py     # 并发性能测试
+├─ multimodal_RAG/
+│  ├─ graph_video.py             # graph2 + 视频生成 的多模态图
+│  ├─ video_state.py             # 多模态扩展 state
+│  ├─ video_generate_node.py     # 视频生成节点（Sora / Kling）
+│  ├─ video_parser.py            # 视频按帧采样解析
+│  ├─ image_parser.py            # 图片解析
+│  ├─ pdf_image_extractor.py     # PDF 图片抽取
+│  └─ multimodal_ingest.py       # 多模态统一入库
 ├─ documents/
 │  ├─ markdown_parser.py         # 解析 + 语义切块
 │  ├─ milvus_db.py               # Milvus schema / connection
@@ -201,20 +253,25 @@ RAG_PROJECT/
 │  └─ embeddings_model.py        # embedding 模型
 ├─ datas/
 │  ├─ md/                        # 知识库 markdown
-│  └─ evaluation/                # 多轮评测输出
-└─ utils/
-   ├─ env_utils.py
-   └─ log_utils.py
+│  ├─ PDF/                       # 原始 PDF 论文
+│  ├─ image_input/               # 图片入库源
+│  ├─ videos_output/             # 视频生成输出
+│  └─ evaluation/                # 多轮评测输出（第 1~22 次）
+├─ utils/
+│  ├─ env_utils.py
+│  ├─ log_utils.py
+│  └─ draw_png.py                # 图结构可视化
+├─ app_graph2.py                 # Gradio Web Demo（文字 + 语音）
+└─ requirements.txt
 ```
 
 ---
 
-
-
 ## 9. 后续改进建议
 
+- 提升召回与上下文精度（当前 `context_precision pass_rate=0.6`）
 - 引入更系统的 badcase 标签体系（RET / TOOL / PLAN / GEN / SAFE）
 - 增加引用命中率、工具调用成功率等业务指标
-- 将 `env_utils.py` 中硬编码配置完全迁移到 `.env`
-- 增加 API 服务层（FastAPI）与前端 Demo，形成端到端产品形态
-
+- 把 `env_utils.py` 中硬编码配置完全迁移到 `.env`
+- 把 Gradio Demo 升级为 FastAPI + 前端，对外暴露稳定 API
+- 多模态侧补充“图问答 / 视频问答”的端到端评测
