@@ -1,4 +1,4 @@
-多模态RAG企业知识库问答系统
+# 多模态RAG企业知识库问答系统
 
 一个面向半导体技术问答场景的 `Agentic RAG` 项目，基于 `LangGraph + Milvus + RAGAS`，支持：
 
