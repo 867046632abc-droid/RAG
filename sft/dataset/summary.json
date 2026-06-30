@@ -1,0 +1,21 @@
+{
+  "source": "RAG_PROJECT/sft/results_lite/raw_seed_candidates.jsonl",
+  "raw_count": 1000,
+  "valid_count": 1000,
+  "train_count": 900,
+  "validation_count": 100,
+  "duplicate_count": 0,
+  "reject_reasons": {},
+  "intent_counts": {
+    "advantage": 121,
+    "mechanism": 159,
+    "challenge": 143,
+    "definition": 49,
+    "comparison": 164,
+    "application": 142,
+    "process": 107,
+    "parameter": 115
+  },
+  "valid_ratio": 0.1,
+  "seed": 20260630
+}

@@ -1,5 +1,5 @@
 {
   "stage": "failed",
   "updated_at": "2026-05-07T18:08:28",
-  "error": "AuthenticationError(\"Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-ef33a***********************baf0. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}\")"
+  "error": "AuthenticationError(\"Error code: 401 - API key redacted\")"
 }

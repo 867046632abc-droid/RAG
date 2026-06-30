@@ -16,4 +16,5 @@ MILVUS_URI = _raw_milvus_uri
 
 COLLECTION_NAME = 't_collection01'
 
-os.environ['TAVILY_API_KEY'] = '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'
+if os.getenv('TAVILY_API_KEY'):
+    os.environ['TAVILY_API_KEY'] = os.getenv('TAVILY_API_KEY')

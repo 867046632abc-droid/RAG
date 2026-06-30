@@ -1,0 +1,18 @@
+{
+  "rag_query_planner_train": {
+    "file_name": "train_alpaca.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "rag_query_planner_valid": {
+    "file_name": "valid_alpaca.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "全环绕栅极晶体管比FinFET好在哪里？",
+    "output": "{\"primary_query\":\"全环绕栅极晶体管（GAA）相较于FinFET的优势\",\"secondary_queries\":[\"GAA比FinFET的优点\",\"Gate-All-Around vs FinFET advantage\",\"全环绕栅极对比鳍式场效应晶体管优势\",\"GAA FinFET性能功耗差异\"],\"must_keep_terms\":[\"全环绕栅极晶体管\",\"GAA\",\"FinFET\",\"鳍式场效应晶体管\",\"优势\"],\"intent\":\"advantage\",\"answer_aspects\":[\"短通道效应抑制效果\",\"电流控制能力\",\"电流密度\",\"尺寸缩小潜力\",\"功耗表现\",\"结构设计灵活性\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "晶圆键合技术为什么是3D封装的关键技术？",
+    "output": "{\"primary_query\":\"晶圆键合技术 3D封装 关键技术原因\",\"secondary_queries\":[\"Wafer Bonding 3D Packaging 作用\",\"晶圆键合 三维封装 支持机制\",\"晶圆键合 3D封装 技术优势\"],\"must_keep_terms\":[\"晶圆键合技术\",\"Wafer Bonding\",\"3D封装\",\"三维封装\",\"3D Packaging\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"提高封装空间利用率\",\"缩短芯片间互联距离\",\"提升系统性能\",\"支持存储器与计算单元集成\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "半导体厂商应用多重曝光技术时面临哪些挑战？",
+    "output": "{\"primary_query\":\"半导体制造实施多重曝光技术的挑战\",\"secondary_queries\":[\"Multi-patterning implementation挑战\",\"多重曝光工艺落地难点\",\"多重曝光掩模制造成本问题\",\"多重曝光对准精度要求\"],\"must_keep_terms\":[\"多重曝光技术\",\"Multi-patterning\",\"实施挑战\",\"半导体制造\"],\"intent\":\"challenge\",\"answer_aspects\":[\"掩模设计制造难度与成本\",\"图案对准精度要求\",\"生产效率影响\",\"成本时间产量平衡要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "什么是自对准双重成像技术？它主要用来解决半导体光刻中的哪些问题？",
+    "output": "{\"primary_query\":\"自对准双重成像技术 定义 作用 光刻领域解决的问题\",\"secondary_queries\":[\"SADP 定义 功能\",\"Self-Aligned Double Patterning 光刻分辨率限制解决方案\",\"自对准双重成像 半导体光刻 核心作用\"],\"must_keep_terms\":[\"自对准双重成像技术\",\"SADP\",\"Self-Aligned Double Patterning\",\"光刻\",\"半导体\"],\"intent\":\"definition\",\"answer_aspects\":[\"技术定义\",\"核心功能\",\"解决的光刻分辨率限制问题\",\"适用场景\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "TSV硅通孔技术相比传统引线键合有什么优势，在3D集成电路中能带来哪些性能提升？",
+    "output": "{\"primary_query\":\"TSV硅通孔技术 引线键合 优势 3D集成电路 性能提升\",\"secondary_queries\":[\"Through-Silicon Via vs Wire Bonding 性能对比\",\"TSV 互联长度 信号延迟 寄生电容 串扰噪声 信号完整性 SI\",\"3D IC 集成度 传输带宽 性能提升数据 TSV优势\"],\"must_keep_terms\":[\"TSV\",\"硅通孔技术\",\"引线键合\",\"Wire Bonding\",\"3D集成电路\",\"3D IC\"],\"intent\":\"advantage\",\"answer_aspects\":[\"TSV相对传统引线键合的优势\",\"TSV在3D集成电路中的性能提升效果\",\"TSV对集成度和传输速率的改善\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "碳纳米管用作场效应晶体管的沟道材料相比传统硅材料有哪些更好的表现？",
+    "output": "{\"primary_query\":\"碳纳米管与硅作为场效应晶体管沟道材料的性能对比\",\"secondary_queries\":[\"CNTs FET沟道材料性能优势\",\"Carbon Nanotubes vs Silicon FET特性对比\",\"碳纳米管场效应晶体管 载流能力 迁移率\"],\"must_keep_terms\":[\"碳纳米管\",\"硅\",\"场效应晶体管\",\"FET\",\"沟道材料\",\"性能对比\"],\"intent\":\"comparison\",\"answer_aspects\":[\"导电性能\",\"电流载流能力\",\"迁移率\",\"热导性\",\"散热能力\",\"功耗\",\"热失效风险\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "浸没式光刻实现量产需要解决哪些核心挑战？",
+    "output": "{\"primary_query\":\"浸没式光刻 量产核心挑战\",\"secondary_queries\":[\"Immersion Lithography manufacturing challenges\",\"浸没式光刻 焦深 DOF 补偿技术\",\"浸没式光刻 气泡 水印 污染控制要求\",\"超纯水 18.2MΩ·cm 浸没光刻参数\"],\"must_keep_terms\":[\"浸没式光刻\",\"量产\",\"挑战\"],\"intent\":\"challenge\",\"answer_aspects\":[\"焦深挑战及补偿方案\",\"缺陷控制要求\",\"流体动力学优化要求\",\"配套光刻胶及涂层材料要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "现在硅通孔技术落地应用的主要技术瓶颈有哪些？",
+    "output": "{\"primary_query\":\"当前硅通孔技术TSV的主要应用技术瓶颈与挑战\",\"secondary_queries\":[\"Through-Silicon Via 3D集成技术难题\",\"TSV热管理应力测试瓶颈参数要求\",\"硅通孔技术现存落地障碍\"],\"must_keep_terms\":[\"硅通孔技术\",\"TSV\",\"技术瓶颈\",\"挑战\"],\"intent\":\"challenge\",\"answer_aspects\":[\"热管理问题指标\",\"应力效应控制要求\",\"测试复杂度要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "和传统单次光刻曝光相比，多重曝光技术有什么优势？",
+    "output": "{\"primary_query\":\"多重曝光技术 单次光刻曝光 优势 分辨率\",\"secondary_queries\":[\"MPT 突破光刻机分辨率极限 优势\",\"多重曝光 小于光源波长特征尺寸 图形转移优势\",\"多重曝光 vs 单次曝光 光刻精度优势\"],\"must_keep_terms\":[\"多重曝光技术\",\"MPT\",\"单次曝光\",\"分辨率极限\",\"特征尺寸\",\"光刻\"],\"intent\":\"advantage\",\"answer_aspects\":[\"分辨率提升能力\",\"小尺寸图形转移能力\",\"突破光学衍射极限的优势\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "台积电和三星分别在什么工艺节点应用了GAA晶体管技术？",
+    "output": "{\"primary_query\":\"台积电 三星 GAA晶体管 工艺节点 应用\",\"secondary_queries\":[\"TSMC 2nm Nanosheet GAA技术\",\"三星 3nm MBCFET GAA量产\",\"GAA FET 厂商工艺节点落地情况\"],\"must_keep_terms\":[\"台积电\",\"三星\",\"GAA晶体管\",\"工艺节点\"],\"intent\":\"application\",\"answer_aspects\":[\"台积电GAA技术对应工艺节点\",\"三星GAA技术对应工艺节点\",\"各厂商GAA技术变体名称\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "目前行业前沿的扇出型WLP技术有哪些，WLP未来的发展方向是什么？",
+    "output": "{\"primary_query\":\"行业前沿 扇出型WLP技术 WLP发展方向 异构集成\",\"secondary_queries\":[\"台积电 TSMC InFO技术 Integrated Fan-Out\",\"日月光 ASE FoCoS技术 Fan-Out Chip on Substrate\",\"WLP技术发展方向 3D集成 混合键合 Hybrid Bonding\",\"异构集成需求下WLP技术发展趋势\"],\"must_keep_terms\":[\"扇出型WLP\",\"TSMC\",\"InFO\",\"ASE\",\"FoCoS\",\"3D集成\",\"混合键合\",\"Hybrid Bonding\"],\"intent\":\"process\",\"answer_aspects\":[\"前沿扇出型WLP技术代表厂商方案\",\"WLP技术未来发展方向\",\"异构集成下WLP技术趋势\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "TSV用在高带宽存储器和处理器的3D堆叠里能带来哪些性能提升？",
+    "output": "{\"primary_query\":\"TSV在高带宽存储器HBM与处理器GPU/CPU 3D堆叠中的性能提升\",\"secondary_queries\":[\"硅通孔技术存储-逻辑异构集成增益\",\"Through-Silicon Via HBM与CPU/GPU堆叠性能参数\",\"TSV 3D堆叠带宽延迟能效优化幅度\"],\"must_keep_terms\":[\"TSV\",\"高带宽存储器\",\"HBM\",\"GPU\",\"CPU\",\"3D堆叠\",\"存储-逻辑异构集成\"],\"intent\":\"advantage\",\"answer_aspects\":[\"数据带宽提升幅度\",\"延迟降低比例\",\"能效优化比例\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "相同制程节点下，碳纳米管晶体管比硅基MOSFET有哪些性能优势？",
+    "output": "{\"primary_query\":\"相同制程节点下碳纳米管晶体管相比硅基MOSFET的性能优势\",\"secondary_queries\":[\"CNTFET vs silicon MOSFET performance advantage same process node\",\"碳管晶体管 硅器件 同制程 性能对比\",\"碳纳米管场效应晶体管 硅基器件 性能优势\"],\"must_keep_terms\":[\"碳纳米管晶体管\",\"硅基MOSFET\",\"相同制程节点\",\"性能优势\"],\"intent\":\"comparison\",\"answer_aspects\":[\"开关速度\",\"亚阈值摆幅\",\"集成密度\",\"载流子迁移率\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "定向自组装技术有哪些提升半导体图案化精度的具体策略？",
+    "output": "{\"primary_query\":\"DSA 定向自组装技术 提升半导体图案化精度策略\",\"secondary_queries\":[\"定向自组装 微相分离 掺杂调控 精度提升\",\"DSA 底物表面化学修改 图案精度\",\"定向自组装 双层光刻模板 图案可控性\"],\"must_keep_terms\":[\"DSA\",\"定向自组装技术\",\"图案化精度\",\"半导体\",\"微相分离\",\"掺杂调控\"],\"intent\":\"process\",\"answer_aspects\":[\"微相分离工艺作用\",\"掺杂调控方法\",\"底物表面化学修改方案\",\"模板导向工艺\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "纳米压印光刻如果要用到半导体量产，还需要解决哪些问题？",
+    "output": "{\"primary_query\":\"纳米压印光刻NIL实现半导体量产面临的瓶颈与挑战\",\"secondary_queries\":[\"NIL 量产 技术瓶颈\",\"纳米压印光刻 缺陷控制 模板寿命 套刻精度\",\"NIL 半导体量产 供应链 技术标准问题\"],\"must_keep_terms\":[\"纳米压印光刻\",\"NIL\",\"半导体量产\",\"瓶颈\",\"挑战\"],\"intent\":\"challenge\",\"answer_aspects\":[\"缺陷控制\",\"模板寿命\",\"套刻精度\",\"产业生态\",\"配套材料供应链\",\"技术标准体系\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "高介电常数金属栅极技术的基本构成是什么，用到了哪些核心材料？",
+    "output": "{\"primary_query\":\"高介电常数金属栅极HKMG的核心组件及所用核心材料\",\"secondary_queries\":[\"HKMG技术基本构成\",\"High-κ Metal Gate核心材料种类\",\"高k金属栅两大核心组件\",\"HKMG介质层与电极层材料\"],\"must_keep_terms\":[\"高介电常数金属栅极\",\"HKMG\",\"High-κ介质\",\"金属栅极\",\"核心材料\"],\"intent\":\"definition\",\"answer_aspects\":[\"HKMG两大核心组件\",\"High-κ介质材料种类及参数\",\"金属栅极材料种类及特性\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "HKMG技术为什么能解决28nm以下制程的栅极漏电流问题？",
+    "output": "{\"primary_query\":\"高介电常数金属栅极HKMG解决28nm以下制程栅极漏电流的原理\",\"secondary_queries\":[\"高κ金属栅极抑制栅极漏电流机制\",\"量子隧穿效应控制 高介电常数介质\",\"HfO₂介质层 漏电流抑制效果\",\"等效氧化层厚度EOT缩减 漏电流控制\"],\"must_keep_terms\":[\"HKMG\",\"高介电常数金属栅极\",\"28nm\",\"栅极漏电流\",\"制程\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"28nm以下制程漏电流产生原因\",\"HKMG高κ介质层材料特性\",\"隧穿电流抑制原理\",\"漏电流降低幅度\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "为什么FinFET晶体管结构能够降低芯片功耗？",
+    "output": "{\"primary_query\":\"FinFET晶体管结构降低功耗的原理\",\"secondary_queries\":[\"FinFET 降低功耗 核心机制\",\"Fin场效应晶体管 减少芯片功耗 原理\",\"FinFET 抑制漏电流 降低功耗\",\"FinFET 工作电压降低 动态功耗减少\"],\"must_keep_terms\":[\"FinFET\",\"功耗\",\"漏电流\",\"短沟道效应\",\"工作电压\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"FinFET降低功耗的核心机制\",\"结构改进对功耗的影响\",\"静态功耗和动态功耗的降低原因\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "制造TSV的核心工艺步骤都有哪些？",
+    "output": "{\"primary_query\":\"TSV硅通孔制造的核心工艺步骤\",\"secondary_queries\":[\"Through-Silicon Via 工艺流程\",\"三维集成TSV工艺环节\",\"深硅刻蚀 TSV 制造流程\",\"硅通孔先通孔/中通孔/后通孔方案\"],\"must_keep_terms\":[\"TSV\",\"制造\",\"工艺步骤\",\"深硅刻蚀\",\"绝缘层沉积\",\"铜电镀填充\",\"晶圆减薄与键合\"],\"intent\":\"process\",\"answer_aspects\":[\"TSV工艺方案分类（先/中/后通孔）\",\"深硅刻蚀工艺\",\"绝缘/阻挡层沉积工艺\",\"铜电镀填充工艺\",\"晶圆减薄与键合工艺\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "在半导体工艺开发中应用虚拟制造技术有哪些好处？",
+    "output": "{\"primary_query\":\"虚拟制造技术在半导体工艺开发中的应用优势\",\"secondary_queries\":[\"虚拟制造 半导体工艺开发 益处\",\"半导体虚拟制造技术 价值\",\"virtual manufacturing semiconductor process development benefits\",\"虚拟制造 减少半导体工艺物理实验\"],\"must_keep_terms\":[\"虚拟制造技术\",\"半导体工艺开发\",\"优势\"],\"intent\":\"advantage\",\"answer_aspects\":[\"设计空间探索能力\",\"工艺参数优化效果\",\"物理实验成本降低\",\"实时监测反馈能力\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "和LELE双重曝光相比，SADP自对准技术有哪些优势？",
+    "output": "{\"primary_query\":\"LELE SADP 多重曝光技术 SADP优势对比\",\"secondary_queries\":[\"Litho-Etch-Litho-Etch 自对准双重曝光 优势对比\",\"SADP相对于LELE的优点\",\"两种多重曝光工艺差异\"],\"must_keep_terms\":[\"LELE\",\"SADP\",\"Litho-Etch-Litho-Etch\",\"Self-Aligned Double Patterning\"],\"intent\":\"comparison\",\"answer_aspects\":[\"SADP相较于LELE的优势\",\"两种多重曝光技术的不同特点\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "等离子体刻蚀实现高精度图形转移的关键要素有哪些？",
+    "output": "{\"primary_query\":\"等离子体刻蚀实现高精度图形转移的关键要素\",\"secondary_queries\":[\"Plasma Etching高精度图形转移核心要素\",\"等离子体刻蚀图形转移关键参数\",\"微纳加工高精度图形转移刻蚀条件\"],\"must_keep_terms\":[\"等离子体刻蚀\",\"Plasma Etching\",\"高精度图形转移\"],\"intent\":\"parameter\",\"answer_aspects\":[\"光刻胶掩模制备要求\",\"刻蚀工艺参数优化方向\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "应变技术在22nm FinFET和未来GAA架构里分别能带来什么效果？",
+    "output": "{\"primary_query\":\"22nm FinFET GAA架构 应变技术 性能效果\",\"secondary_queries\":[\"22nm FinFET 驱动电流提升 应变技术\",\"亚阈值斜率 70mV/dec 应变工艺优化\",\"Gate-All-Around 纳米线几何应变效应 协同增强\"],\"must_keep_terms\":[\"22nm FinFET\",\"GAA\",\"驱动电流\",\"25%\",\"亚阈值斜率\",\"70mV/dec\",\"纳米线\"],\"intent\":\"application\",\"answer_aspects\":[\"22nm FinFET应变技术性能提升数据\",\"GAA架构应变技术协同效应\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "FinFET晶体管为什么能比传统平面MOSFET大幅提升芯片性能？",
+    "output": "{\"primary_query\":\"FinFET晶体管相比传统平面MOSFET提升芯片性能的机制\",\"secondary_queries\":[\"Fin Field-Effect Transistor 性能提升原理\",\"鳍式场效应管 短沟道效应抑制方法\",\"FinFET 栅极控制能力 功耗优化路径\"],\"must_keep_terms\":[\"FinFET\",\"平面MOSFET\",\"芯片性能\",\"提升机制\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"栅极控制能力提升原理\",\"短沟道效应抑制方法\",\"静态功耗降低路径\",\"驱动电流提升方式\",\"寄生参数优化效果\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "EUV光刻胶需要满足的核心性能指标都有哪些？",
+    "output": "{\"primary_query\":\"EUV光刻胶 核心性能指标要求\",\"secondary_queries\":[\"极紫外光刻胶 核心参数要求\",\"EUV Photoresist key specifications\",\"EUV光刻胶 分辨率 灵敏度 LER 指标要求\"],\"must_keep_terms\":[\"EUV光刻胶\",\"核心指标\",\"极紫外光刻\"],\"intent\":\"parameter\",\"answer_aspects\":[\"高分辨率指标要求\",\"高灵敏度指标要求\",\"低线边缘粗糙度(LER)要求\",\"抗刻蚀性要求\",\"无缺陷要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "要提升量子点发光二极管的发光效率可以采用哪些技术路径？",
+    "output": "{\"primary_query\":\"量子点发光二极管 QLED 发光效率提升 关键技术路径\",\"secondary_queries\":[\"Quantum Dot Light-Emitting Diode 结构优化 效率提升\",\"量子点发光层 核壳结构 配体工程 载流子注入\",\"能级工程 载流子平衡注入 界面能级对准 效率优化\",\"Ⅲ-Ⅴ族 钙钛矿 巨量子点 材料体系优化\"],\"must_keep_terms\":[\"量子点发光二极管\",\"QLED\",\"Quantum Dot Light-Emitting Diode\",\"发光效率\",\"技术路径\"],\"intent\":\"process\",\"answer_aspects\":[\"QLED多层结构优化方案\",\"量子点发光层改性方法\",\"材料体系优化选择方向\",\"器件物理能级调控手段\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "为什么极低温工艺在先进半导体制造中越来越受关注？",
+    "output": "{\"primary_query\":\"极低温工艺 先进半导体制造 受关注原因\",\"secondary_queries\":[\"极低温半导体加工工艺 先进制程 受重视原因\",\"cryogenic process semiconductor manufacturing why getting attention\",\"接近绝对零度半导体制造工艺 优势\",\"7纳米及以下技术节点 极低温工艺作用\"],\"must_keep_terms\":[\"极低温工艺\",\"先进半导体制造\"],\"intent\":\"advantage\",\"answer_aspects\":[\"极低温工艺在先进半导体制造中受关注的核心原因\",\"极低温工艺对半导体制造的好处\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "当前晶圆级封装的行业前沿技术和未来发展方向是什么？",
+    "output": "{\"primary_query\":\"WLP 行业前沿技术 未来发展方向\",\"secondary_queries\":[\"晶圆级封装 台积电InFO 日月光FoCoS 技术\",\"WLP 3D集成 混合键合 发展趋势\",\"Integrated Fan-Out Fan-Out Chip on Substrate 封装技术\"],\"must_keep_terms\":[\"WLP\",\"晶圆级封装\",\"InFO\",\"台积电\",\"TSMC\",\"FoCoS\",\"日月光\",\"ASE\",\"3D集成\",\"混合键合\",\"Hybrid Bonding\",\"异构集成\"],\"intent\":\"process\",\"answer_aspects\":[\"WLP领域头部厂商的前沿代表性技术\",\"WLP技术的未来演进方向\",\"异构集成需求下的WLP技术升级路径\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "硅通孔TSV技术在三维集成电路中有哪些优势？",
+    "output": "{\"primary_query\":\"硅通孔技术 TSV 三维集成电路 优势\",\"secondary_queries\":[\"Through-Silicon Via 硅通孔技术优点\",\"TSV在3D IC中的好处\",\"硅通孔技术性能提升\",\"TSV半导体技术优势\"],\"must_keep_terms\":[\"硅通孔技术\",\"TSV\",\"Through-Silicon Via\",\"三维集成电路\",\"3D IC\"],\"intent\":\"advantage\",\"answer_aspects\":[\"硅通孔技术的各类优势\",\"TSV对3D IC性能的提升方向\",\"TSV技术在半导体集成中的作用\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "扫描电子显微镜在晶圆微观故障定位工作中发挥什么作用？",
+    "output": "{\"primary_query\":\"扫描电子显微镜 晶圆微观故障定位 作用\",\"secondary_queries\":[\"SEM 晶圆缺陷定位 用途\",\"Scanning Electron Microscope wafer fault location function\",\"扫描电镜 硅片故障分析 应用\"],\"must_keep_terms\":[\"扫描电子显微镜\",\"SEM\",\"晶圆\",\"微观故障定位\"],\"intent\":\"application\",\"answer_aspects\":[\"扫描电子显微镜工作原理\",\"在故障定位中的具体作用\",\"适用的故障检查场景\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "量子点显示制造过程中材料合成环节有哪些技术难点？",
+    "output": "{\"primary_query\":\"量子点显示制造材料合成环节技术难点\",\"secondary_queries\":[\"Quantum Dots 材料合成控制挑战\",\"CdSe InP量子点合成要求\",\"量子点尺寸均一性 表面钝化 无镉化难点\"],\"must_keep_terms\":[\"量子点显示\",\"制造\",\"材料合成\",\"技术难点\"],\"intent\":\"challenge\",\"answer_aspects\":[\"量子点尺寸均一性要求\",\"表面钝化精度要求\",\"无镉化量子点发光效率提升要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "半导体制造中虚拟计量技术是通过哪些机制提升良率的？",
+    "output": "{\"primary_query\":\"半导体制造 虚拟计量技术 良率提升机制\",\"secondary_queries\":[\"Virtual Metrology VM 良率提升原理\",\"虚拟计量 实时工艺偏差检测修正 良率提升\",\"虚拟计量 缺陷根源分析 良率提升\"],\"must_keep_terms\":[\"半导体制造\",\"虚拟计量技术\",\"Virtual Metrology\",\"VM\",\"良率\",\"提升机制\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"实时工艺偏差检测与修正\",\"基于数据的缺陷根源分析\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "现代HKMG工艺采用的后栅极制造流程是怎样的？",
+    "output": "{\"primary_query\":\"后栅极(Gate-Last) HKMG 制程集成工艺步骤\",\"secondary_queries\":[\"Gate-Last HKMG 制造流程\",\"高k金属栅后栅工艺步骤\",\"HKMG ALD原子层沉积工艺要求\",\"HKMG 金属栅填充工艺方法\",\"HKMG 界面优化工艺参数\"],\"must_keep_terms\":[\"后栅极(Gate-Last)\",\"HKMG\",\"ALD(原子层沉积)\",\"PVD\",\"HfO₂\",\"SiON界面层\"],\"intent\":\"process\",\"answer_aspects\":[\"虚拟栅极工艺步骤\",\"高k介质沉积工艺要求\",\"金属栅填充方法\",\"界面优化工艺参数\",\"厚度控制精度\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "TSV三维集成中的热机械应力问题有哪些解决措施？",
+    "output": "{\"primary_query\":\"TSV 三维集成 热机械应力 解决方案\",\"secondary_queries\":[\"硅通孔热膨胀系数不匹配 解决方法\",\"Through-Silicon Via CTE 匹配方案\",\"TSV 热应力 工艺优化措施\"],\"must_keep_terms\":[\"TSV\",\"硅通孔\",\"三维集成\",\"热机械应力\",\"解决方案\"],\"intent\":\"challenge\",\"answer_aspects\":[\"填充材料选型优化\",\"TSV布局设计优化\",\"键合工艺优化\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "提升量子点发光器件效率有哪些常见的材料优化策略？",
+    "output": "{\"primary_query\":\"量子点发光器件 效率提升 材料优化策略\",\"secondary_queries\":[\"多壳层结构设计 梯度合金壳层 降低晶格失配应力\",\"配体工程 短链配体 提升电荷传输效率\",\"掺杂技术 Mn掺杂ZnSe量子点 高效发光\"],\"must_keep_terms\":[\"多壳层结构设计\",\"配体工程\",\"掺杂技术\",\"量子点发光器件\"],\"intent\":\"process\",\"answer_aspects\":[\"材料优化策略分类\",\"各优化策略的作用\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "7nm以下先进制程中，有什么方法可以提升晶体管源漏区的杂质激活效率啊？",
+    "output": "{\"primary_query\":\"激光退火技术优化7nm以下制程晶体管源漏区激活效率的方法\",\"secondary_queries\":[\"Laser Annealing 提升S/D区激活效率方法\",\"7nm节点源漏杂质激活优化工艺\",\"超浅结USJ退火优化方案\"],\"must_keep_terms\":[\"激光退火\",\"源漏区\",\"激活效率\",\"7nm以下制程\"],\"intent\":\"process\",\"answer_aspects\":[\"激光退火优化原理\",\"具体工艺方法\",\"参数取值范围\",\"优化效果\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "3D NAND的阶梯接触形成工艺有什么瓶颈，目前有哪些优化方案？",
+    "output": "{\"primary_query\":\"3D NAND阶梯接触形成工艺瓶颈及优化方案\",\"secondary_queries\":[\"Staircase Contact 3D NAND工艺瓶颈\",\"3D NAND阶梯区面积占比优化方法\",\"Double Patterning缩小阶梯间距技术\",\"Self-Aligned Quadruple Patterning阶梯工艺应用\",\"Monolithic Staircase技术开发难点\"],\"must_keep_terms\":[\"3D NAND\",\"阶梯接触\",\"工艺瓶颈\",\"优化方案\"],\"intent\":\"process\",\"answer_aspects\":[\"阶梯区面积占比过高对存储密度的影响\",\"图案化工艺复杂度提升问题\",\"新型阶梯工艺的开发挑战\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "在MEMS制造中，晶圆键合技术按照键合机制可以分为哪几类？",
+    "output": "{\"primary_query\":\"晶圆键合技术 分类 键合机制 MEMS制造\",\"secondary_queries\":[\"Wafer Bonding 分类 键合机制\",\"微机电系统 晶圆键合类型划分\",\"直接键合 阳极键合 中间层键合 共晶键合 特点\"],\"must_keep_terms\":[\"晶圆键合\",\"Wafer Bonding\",\"MEMS\",\"键合机制\",\"分类\"],\"intent\":\"definition\",\"answer_aspects\":[\"晶圆键合技术的分类方式\",\"不同类别晶圆键合的基本特点\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "先进制程用的高密度等离子体干法刻蚀有哪些技术挑战，有什么缓解方法？",
+    "output": "{\"primary_query\":\"高密度等离子体 HDP 干法刻蚀 技术挑战 缓解方案\",\"secondary_queries\":[\"ICP CCP 刻蚀 技术难点 优化方案\",\"等离子体诱导损伤 PID 栅氧损伤 缓解方法\",\"干法刻蚀 选择比 气体化学体系 提升\",\"300mm 先进刻蚀机 成本 维护费用\"],\"must_keep_terms\":[\"高密度等离子体\",\"HDP\",\"ICP\",\"CCP\",\"等离子体诱导损伤\",\"PID\",\"选择比\",\"300mm刻蚀机\"],\"intent\":\"challenge\",\"answer_aspects\":[\"等离子体诱导损伤的表现及缓解技术\",\"刻蚀选择比限制及优化方案\",\"刻蚀设备复杂度与成本问题\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "什么是自对准双重成像技术？",
+    "output": "{\"primary_query\":\"自对准双重成像技术 SADP 定义 核心作用\",\"secondary_queries\":[\"Self-Aligned Double Patterning 定义\",\"SADP 基本概念\",\"自对准双重成像技术 所属光刻技术类别\"],\"must_keep_terms\":[\"自对准双重成像技术\",\"SADP\",\"Self-Aligned Double Patterning\",\"光刻技术\"],\"intent\":\"definition\",\"answer_aspects\":[\"技术定义\",\"英文缩写\",\"所属技术分类\",\"核心功能\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "晶圆键合前的表面处理需要满足哪些要求，常用的处理工艺有哪些？",
+    "output": "{\"primary_query\":\"晶圆键合前表面处理指标要求及常用工艺\",\"secondary_queries\":[\"Wafer Bonding表面粗糙度控制要求\",\"原子级平坦化实现工艺\",\"等离子体活化键合表面优化方法\",\"兆声波清洗结合CMP复合工艺\"],\"must_keep_terms\":[\"晶圆键合\",\"表面处理\",\"原子级平坦化\",\"表面粗糙度\",\"化学机械抛光\",\"CMP\"],\"intent\":\"process\",\"answer_aspects\":[\"表面处理核心指标要求\",\"主流处理工艺类型\",\"不同工艺的优缺点\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "和传统快速热退火相比，激光退火技术有什么优势？",
+    "output": "{\"primary_query\":\"激光退火与传统快速热退火的特点及优势对比\",\"secondary_queries\":[\"Laser Annealing vs RTA 差异\",\"超短热预算 选择加热 超高温度梯度\",\"纳米器件源漏工程退火技术对比\"],\"must_keep_terms\":[\"激光退火\",\"快速热退火\",\"RTA\",\"优势\"],\"intent\":\"comparison\",\"answer_aspects\":[\"核心特征差异\",\"适用场景差异\",\"工艺效果差异\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "半导体制造中，等离子体刻蚀加工高深宽比结构的工作原理是什么？",
+    "output": "{\"primary_query\":\"等离子体刻蚀 高深宽比结构 加工工作原理\",\"secondary_queries\":[\"Plasma Etching 高深宽比结构 工作机制\",\"反应性离子刻蚀 高深宽比加工 原理\",\"RIE 高深宽比结构加工 原理\",\"等离子体去除材料 原理\"],\"must_keep_terms\":[\"等离子体刻蚀\",\"高深宽比结构\",\"半导体制造\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"等离子体刻蚀工作原理\",\"高深宽比结构加工机制\",\"等离子体粒子作用过程\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "3D NAND闪存相比传统的平面2D NAND存储有哪些优势？",
+    "output": "{\"primary_query\":\"3D NAND闪存 传统平面2D NAND存储 优势对比\",\"secondary_queries\":[\"3D NAND vs 2D NAND 优点\",\"三维NAND闪存 平面NAND 优势\",\"3D NAND 2D NAND 存储密度 功耗 耐用性 对比\"],\"must_keep_terms\":[\"3D NAND\",\"2D NAND\",\"平面存储\",\"优势\"],\"intent\":\"comparison\",\"answer_aspects\":[\"存储密度差异\",\"功耗差异\",\"性能差异\",\"耐用性差异\",\"单位存储成本差异\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "MOCVD设备运行的关键控制参数有哪些？",
+    "output": "{\"primary_query\":\"MOCVD设备的关键控制参数\",\"secondary_queries\":[\"金属有机化学气相沉积设备控制参数\",\"MOCVD反应室控制参数\",\"V/III比 生长温度 反应室压力 MOCVD参数\"],\"must_keep_terms\":[\"MOCVD\",\"关键控制参数\",\"V/III比\",\"生长温度\",\"反应室压力\"],\"intent\":\"parameter\",\"answer_aspects\":[\"MOCVD关键控制参数列表\",\"各参数相关说明\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "HKMG用的High-k材料相比传统SiO₂栅介质在可靠性上有什么优势？",
+    "output": "{\"primary_query\":\"HKMG High-k材料 与 SiO₂ 栅介质 可靠性对比\",\"secondary_queries\":[\"High-k材料时变介电击穿特性\",\"HKMG TDDB特性优于SiO₂\",\"10年工作寿命栅介质可靠性对比\"],\"must_keep_terms\":[\"HKMG\",\"High-k\",\"SiO₂\",\"时变介电击穿\",\"TDDB\",\"10年工作寿命\"],\"intent\":\"comparison\",\"answer_aspects\":[\"时变介电击穿TDDB特性对比\",\"10年工作寿命下的可靠性表现\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "SADP的工艺流程有哪些关键步骤？",
+    "output": "{\"primary_query\":\"自对准双重成像技术SADP的核心工艺流程步骤\",\"secondary_queries\":[\"Self-Aligned Double Patterning工艺操作步骤\",\"SADP牺牲图形形成 侧壁间隔层沉积流程\",\"自对准双重成像图形转移工艺步骤\",\"SADP工艺用到的沉积刻蚀方法\"],\"must_keep_terms\":[\"SADP\",\"自对准双重成像技术\",\"工艺流程\",\"牺牲图形\",\"侧壁间隔层\",\"沉积\",\"刻蚀\",\"图形转移\"],\"intent\":\"process\",\"answer_aspects\":[\"SADP四个核心工艺步骤\",\"各步骤采用的材料与工艺方法\",\"各步骤的工艺目的\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "现在半导体极低温工艺大规模落地应用还存在哪些挑战？",
+    "output": "{\"primary_query\":\"半导体极低温工艺 大规模落地 应用挑战\",\"secondary_queries\":[\"Cryogenic Semiconductor Manufacturing application challenges\",\"极低温工艺 制冷系统集成\",\"极低温工艺 材料适配性\",\"极低温工艺 封装热管理\"],\"must_keep_terms\":[\"极低温工艺\",\"制冷系统集成\",\"材料适配性\",\"封装热管理\",\"大规模应用\"],\"intent\":\"challenge\",\"answer_aspects\":[\"制冷系统集成挑战\",\"材料适配性问题\",\"封装与热管理难点\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "HKMG技术中的高κ介质层和金属栅极分别发挥什么作用？",
+    "output": "{\"primary_query\":\"HKMG技术 高κ介质层 金属栅极 作用\",\"secondary_queries\":[\"高介电常数介质 等效氧化层厚度 EOT 漏电流控制\",\"金属栅极 多晶硅耗尽效应 PDE 费米钉扎 解决\",\"High-κ Metal Gate 技术原理 材料创新\",\"HfO₂ ZrO₂ 高κ材料 特性\"],\"must_keep_terms\":[\"HKMG\",\"高κ介质层\",\"金属栅极\",\"EOT\",\"等效氧化层厚度\",\"多晶硅耗尽效应\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"高κ介质层的工作机制\",\"金属栅极的技术作用\",\"HKMG解决传统栅极问题的原理\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "SADP技术相比传统的LELE双重曝光技术有哪些技术优势？",
+    "output": "{\"primary_query\":\"SADP自对准双重成像技术相比LELE双重曝光技术的技术优势\",\"secondary_queries\":[\"Self-Aligned Double Patterning对比LELE优势\",\"SADP套刻误差控制优势\",\"SADP工艺窗口宽度优势\",\"SADP与Litho-Etch-Litho-Etch技术对比\"],\"must_keep_terms\":[\"SADP\",\"LELE\",\"Litho-Etch-Litho-Etch\",\"双重曝光技术\",\"套刻误差\",\"工艺窗口\"],\"intent\":\"advantage\",\"answer_aspects\":[\"套刻误差对比结果\",\"工艺窗口宽度对比\",\"初始光刻线宽粗糙度要求对比\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "扇出型晶圆级封装和传统QFP封装相比尺寸上有什么差异？",
+    "output": "{\"primary_query\":\"扇出型晶圆级封装与QFP封装的尺寸对比\",\"secondary_queries\":[\"FOWLP 裸芯片尺寸占比\",\"Fan-Out Wafer Level Packaging vs QFP 尺寸差异\",\"传统QFP封装 裸芯片尺寸比例\"],\"must_keep_terms\":[\"扇出型晶圆级封装\",\"FOWLP\",\"QFP封装\",\"尺寸\",\"裸芯片\"],\"intent\":\"comparison\",\"answer_aspects\":[\"WLP封装尺寸比裸芯片大10-20%\",\"QFP封装尺寸比裸芯片大50-100%\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "现代DSA工艺流程通常包含哪几个步骤？",
+    "output": "{\"primary_query\":\"现代DSA工艺流程包含的步骤\",\"secondary_queries\":[\"DSA process flow steps\",\"DSA工艺操作步骤\",\"DSA工艺流程参数要求\"],\"must_keep_terms\":[\"DSA\",\"工艺流程\",\"步骤\"],\"intent\":\"process\",\"answer_aspects\":[\"DSA工艺流程各步骤内容\",\"各步骤对应的参数要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "用CMP做晶圆表面平坦化有什么好处？",
+    "output": "{\"primary_query\":\"化学机械抛光CMP用于晶圆表面平坦化的优势\",\"secondary_queries\":[\"CMP 晶圆平坦化 优势\",\"Chemical Mechanical Polishing wafer planarization benefit\",\"CMP 粗糙度控制 下层结构保护 优势\",\"化学机械抛光 材料选择性去除 优势\"],\"must_keep_terms\":[\"CMP\",\"化学机械抛光\",\"晶圆\",\"平坦化\",\"优势\"],\"intent\":\"advantage\",\"answer_aspects\":[\"表面粗糙度改善效果\",\"不同材料选择性去除能力\",\"下层结构完整性保护效果\",\"半导体器件整体性能提升作用\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "和传统的物理计量比，虚拟计量在半导体蚀刻工艺里有哪些优势？",
+    "output": "{\"primary_query\":\"虚拟计量 传统物理计量 半导体蚀刻工艺 优势对比\",\"secondary_queries\":[\"Virtual Metrology VM 物理量测 蚀刻工艺 CD预测精度对比\",\"虚拟计量 抽样率 检测成本 设备利用率对比\",\"蚀刻工艺 虚拟计量 良率提升效果\"],\"must_keep_terms\":[\"虚拟计量\",\"传统物理计量\",\"蚀刻工艺\",\"优势\"],\"intent\":\"comparison\",\"answer_aspects\":[\"测量耗时对比\",\"预测精度表现\",\"抽样检测频率差异\",\"检测成本与设备利用率对比\",\"良率提升效果\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "高介电常数金属栅极是如何解决45nm以下工艺中传统MOSFET的栅极漏电问题的？",
+    "output": "{\"primary_query\":\"高介电常数金属栅极 HKMG 45nm工艺 传统MOSFET 栅极漏电 解决方案\",\"secondary_queries\":[\"HKMG 栅极漏电流抑制物理机制\",\"高k介质 量子隧穿效应抑制方法\",\"金属栅极 多晶硅栅耗尽效应解决措施\",\"HfO₂ 栅介质 隧穿概率降低原理\"],\"must_keep_terms\":[\"高介电常数金属栅极\",\"HKMG\",\"45nm\",\"MOSFET\",\"栅极漏电\",\"SiO₂\",\"量子隧穿效应\",\"多晶硅栅耗尽效应\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"传统MOSFET栅极漏电成因\",\"HKMG高k介质作用\",\"HKMG金属栅极作用\",\"漏电流抑制物理机制\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "为什么5nm、3nm这类纳米级制程用传统方法优化半导体良率效果不好？",
+    "output": "{\"primary_query\":\"纳米级制程半导体良率优化传统方法的局限性\",\"secondary_queries\":[\"5nm 3nm制程良率优化传统方法存在的问题\",\"传统物理模型 SPC 难以应对非线性良率问题\",\"统计过程控制优化良率的局限\",\"纳米制程良率优化挑战\"],\"must_keep_terms\":[\"纳米级制程\",\"5nm\",\"3nm\",\"半导体良率优化\",\"物理模型\",\"统计过程控制\",\"SPC\"],\"intent\":\"challenge\",\"answer_aspects\":[\"传统方法的局限性\",\"纳米制程良率优化的挑战\",\"传统方法无法解决的问题\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "等离子体增强ALD工艺可以把沉积温度降到多少，适合什么样的沉积场景？",
+    "output": "{\"primary_query\":\"等离子体增强ALD 工艺温度 适用沉积场景 半导体\",\"secondary_queries\":[\"PE-ALD 沉积温度范围 温度敏感材料沉积\",\"等离子体增强原子层沉积 活化反应物 低温沉积工艺\"],\"must_keep_terms\":[\"PE-ALD\",\"等离子体增强ALD\",\"<100℃\",\"温度敏感材料\"],\"intent\":\"parameter\",\"answer_aspects\":[\"PE-ALD工艺温度参数\",\"PE-ALD适用沉积场景\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "怎么提升TSV的热循环可靠性，最高能达到多少次热循环？",
+    "output": "{\"primary_query\":\"提升TSV热循环可靠性的方法 热循环次数指标\",\"secondary_queries\":[\"TSV 热循环可靠性优化工艺\",\"TSV keep-out zone设计 热循环可靠性\",\"石墨烯阻挡层材料 TSV 热循环次数\"],\"must_keep_terms\":[\"TSV\",\"热循环可靠性\",\"应变工程\",\"keep-out zone\",\"石墨烯\",\"阻挡层材料\",\"1000次\"],\"intent\":\"process\",\"answer_aspects\":[\"应变工程优化方案\",\"新型阻挡层材料选型\",\"热循环可靠性提升后的次数\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "什么是硅光子技术，它用于芯片间高速光互连有什么核心特点？",
+    "output": "{\"primary_query\":\"硅光子技术的定义 硅光子技术实现芯片间高速光互连的核心优势\",\"secondary_queries\":[\"Silicon Photonics基本概念\",\"硅基光电子集成技术特点\",\"芯片间光互连硅光子方案优势\"],\"must_keep_terms\":[\"硅光子技术\",\"芯片间高速光互连\",\"核心优势\",\"定义\"],\"intent\":\"definition\",\"answer_aspects\":[\"硅光子技术基本概念\",\"硅光子技术核心优势\",\"芯片间光互连应用特点\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "EUV光刻胶研发面临的主要技术挑战是什么？",
+    "output": "{\"primary_query\":\"EUV光刻胶 特殊技术挑战\",\"secondary_queries\":[\"极紫外光刻胶 物理限制\",\"EUV Photoresist technical challenges\",\"EUV光刻胶 光子吸收效率 二次电子效应 随机效应\"],\"must_keep_terms\":[\"EUV光刻胶\",\"技术挑战\",\"极紫外光刻\"],\"intent\":\"challenge\",\"answer_aspects\":[\"光子吸收效率限制\",\"二次电子效应影响\",\"随机效应问题\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "硅通孔技术主要可以用在哪些领域？",
+    "output": "{\"primary_query\":\"硅通孔技术 TSV 应用场景\",\"secondary_queries\":[\"Through-Silicon Via 适用领域\",\"3D IC TSV 落地行业\",\"硅通孔技术 高性能计算 存储器应用\"],\"must_keep_terms\":[\"硅通孔技术\",\"TSV\",\"应用\"],\"intent\":\"application\",\"answer_aspects\":[\"高性能计算领域\",\"移动设备领域\",\"存储器领域\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "EUV光源功率提升到500W对3nm制程有什么好处？",
+    "output": "{\"primary_query\":\"EUV光源功率提升到500W 3nm制程 优势\",\"secondary_queries\":[\"High-NA EUV 500W光源 产能提升\",\"极紫外光刻 500W功率 3nm GAA结构 成型质量\",\"EUV功率提升 光子散粒噪声 接触孔桥接风险\"],\"must_keep_terms\":[\"EUV\",\"500W\",\"3nm制程\",\"光源功率提升\"],\"intent\":\"advantage\",\"answer_aspects\":[\"500W光源对晶圆产能的提升\",\"500W光源对图案成型质量的改善\",\"500W光源对缺陷风险的降低\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "晶圆键合技术在3D集成电路里主要有哪些应用啊？",
+    "output": "{\"primary_query\":\"晶圆键合技术在三维集成电路（3D IC）中的应用\",\"secondary_queries\":[\"Wafer Bonding在3D IC中的应用场景\",\"晶圆键合三维集成创新应用\",\"晶圆键合高性能计算 移动设备应用\"],\"must_keep_terms\":[\"晶圆键合\",\"Wafer Bonding\",\"三维集成电路\",\"3D IC\"],\"intent\":\"application\",\"answer_aspects\":[\"增强器件性能\",\"减小封装尺寸\",\"实现多材料异构集成\",\"支持大规模生产\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "开发新型自旋存储器件当前面临哪些主要挑战？",
+    "output": "{\"primary_query\":\"新型自旋存储器件 开发挑战\",\"secondary_queries\":[\"自旋存储 材料选择 界面工程\",\"自旋存储 自旋精确控制 读出技术\",\"自旋存储 存储密度 耐用性 平衡\"],\"must_keep_terms\":[\"自旋存储器件\",\"材料选择\",\"界面工程\",\"自旋控制\",\"读出技术\",\"存储密度\",\"耐用性\"],\"intent\":\"challenge\",\"answer_aspects\":[\"材料与界面工程相关挑战\",\"自旋控制与读出技术难点\",\"存储密度与耐用性平衡问题\",\"电路架构与读写机制研发需求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "GAA晶体管量产的关键制造难题有哪些？对应的解决方案是什么？",
+    "output": "{\"primary_query\":\"GAA晶体管关键制造难题 对应解决方案\",\"secondary_queries\":[\"Gate-All-Around 晶体管 制造挑战 解决方法\",\"纳米片外延生长控制方案\",\"栅极金属填充工艺\",\"GAA应力工程调控方法\"],\"must_keep_terms\":[\"GAA\",\"外延生长控制\",\"栅极金属填充\",\"应力工程\"],\"intent\":\"challenge\",\"answer_aspects\":[\"外延生长厚度控制要求及ALE技术方案\",\"栅极高深宽比间隙填充ALD钨工艺\",\"应力工程SiGe/Si超晶格调控方案\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "先进半导体晶圆厂是怎么监控刻蚀终点，实现纳米级精度控制的？",
+    "output": "{\"primary_query\":\"先进半导体fab 刻蚀终点监控 纳米级精度控制方法\",\"secondary_queries\":[\"在线光学发射光谱 OES Optical Emission Spectroscopy 刻蚀终点监控\",\"质谱分析 实时刻蚀终点检测\",\"AI驱动多变量分析 MVA Multivariate Analysis 半导体过程控制\",\"半导体刻蚀 实时过程控制 技术\"],\"must_keep_terms\":[\"OES\",\"Optical Emission Spectroscopy\",\"MVA\",\"Multivariate Analysis\",\"刻蚀终点\",\"纳米级精度\"],\"intent\":\"process\",\"answer_aspects\":[\"刻蚀终点监控技术\",\"刻蚀过程控制方法\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "自旋电子器件相比传统CMOS器件有哪些突出优势？",
+    "output": "{\"primary_query\":\"自旋电子器件相比传统CMOS器件的优势\",\"secondary_queries\":[\"自旋器件 性能优势\",\"spintronics device advantage over CMOS\",\"磁畴壁存储器 存储密度优势\",\"自旋计算芯片 速度提升\"],\"must_keep_terms\":[\"自旋电子器件\",\"CMOS器件\",\"优势\"],\"intent\":\"advantage\",\"answer_aspects\":[\"存储密度表现\",\"微缩尺寸稳定性\",\"新型计算范式支持\",\"问题求解速度提升\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "晶圆级封装WLP都可以应用在哪些半导体领域？",
+    "output": "{\"primary_query\":\"晶圆级封装 WLP 应用领域 应用场景\",\"secondary_queries\":[\"WLP 最初应用领域\",\"Wafer-Level Packaging 适用场景\",\"WLP 5G毫米波应用\",\"WLP 汽车电子应用\",\"WLP 图像传感器应用\"],\"must_keep_terms\":[\"晶圆级封装\",\"WLP\",\"Wafer-Level Packaging\",\"应用领域\"],\"intent\":\"application\",\"answer_aspects\":[\"初始应用领域\",\"扩展应用领域\",\"适配的应用场景\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "量子点技术为什么能提高半导体太阳能电池的转换效率？",
+    "output": "{\"primary_query\":\"量子点技术 半导体太阳能电池 转换效率提升机制\",\"secondary_queries\":[\"量子点太阳能电池 效率提升原理\",\"MEG效应 光电转换\",\"量子点突破Shockley-Queisser极限\",\"多激子产生 突破单激子限制\"],\"must_keep_terms\":[\"量子点\",\"多激子产生\",\"MEG\",\"Multi-Exciton Generation\",\"44%\",\"Shockley-Queisser极限\",\"33%\",\"硅基太阳能电池\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"效率提升核心机制\",\"多激子产生效应\",\"效率数值对比\",\"相对传统电池的优势原理\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "16nm及以下先进制程中FinFET的关键性能参数有哪些？",
+    "output": "{\"primary_query\":\"16nm以下先进制程FinFET的关键性能参数\",\"secondary_queries\":[\"FinFET 7nm节点饱和电流参数\",\"FinFET亚阈值摆幅数值\",\"FinFET动态功耗降低比例\",\"FinFET阈值电压调控参数\"],\"must_keep_terms\":[\"16nm\",\"先进制程\",\"FinFET\",\"性能参数\",\"7nm\",\"饱和电流\",\"亚阈值摆幅\",\"动态功耗\"],\"intent\":\"parameter\",\"answer_aspects\":[\"饱和电流\",\"亚阈值摆幅\",\"DIBL降低比例\",\"动态功耗降低比例\",\"阈值电压调控维度\",\"应变硅效能提升比例\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "高介电常数栅介质材料的介电常数一般是多少，HKMG常用的栅介质材料有哪些？",
+    "output": "{\"primary_query\":\"高介电常数材料 栅介质 介电常数 典型材料 HKMG\",\"secondary_queries\":[\"高k栅介质 介电常数 25以上 铪氧化物\",\"HfO₂ HKMG 栅介质材料\",\"High-k Metal Gate 常用栅介质材料 参数\"],\"must_keep_terms\":[\"高介电常数材料\",\"介电常数\",\"25\",\"铪氧化物\",\"HfO₂\",\"HKMG\"],\"intent\":\"parameter\",\"answer_aspects\":[\"高介电常数材料的介电常数范围\",\"HKMG技术常用的栅介质材料\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "晶圆厂工艺设备老化导致的预测模型失效问题有什么解决办法吗？",
+    "output": "{\"primary_query\":\"领先Fab解决工艺设备老化导致虚拟计量预测模型失效的方法\",\"secondary_queries\":[\"工艺设备老化 模型漂移 解决方案\",\"增量学习 半导体模型更新策略\",\"Incremental Learning 虚拟计量模型维护\"],\"must_keep_terms\":[\"工艺设备老化\",\"模型漂移\",\"增量学习\",\"Fab\",\"虚拟计量\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"模型漂移应对策略\",\"增量学习更新频率\",\"基准验证集保留比例\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "3D NAND存储器堆叠层数不断提升会遇到哪些核心技术挑战？",
+    "output": "{\"primary_query\":\"3D NAND存储器堆叠工艺层数提升的核心技术挑战\",\"secondary_queries\":[\"3D NAND垂直堆叠制造难题\",\"200层以上3D NAND工艺限制\",\"3D NAND应力累积 关键尺寸控制问题\",\"3D NAND高层数堆叠可靠性问题\"],\"must_keep_terms\":[\"3D NAND\",\"堆叠工艺\",\"层数提升\",\"技术挑战\"],\"intent\":\"challenge\",\"answer_aspects\":[\"应力累积问题\",\"关键尺寸控制问题\",\"蚀刻工艺瓶颈\",\"ALD薄膜均匀性问题\",\"热预算与材料兼容性问题\",\"可靠性与良率控制问题\",\"测试与修复技术挑战\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "量子点显示技术相比传统LCD和OLED有哪些核心优势？",
+    "output": "{\"primary_query\":\"量子点显示技术相比传统LCD、OLED的核心优势\",\"secondary_queries\":[\"Quantum Dot Display 对比LCD OLED优势\",\"量子点显示色域 色彩纯度 能效 寿命优势\",\"量子点显示NTSC Rec.2020 半峰宽 性能指标\"],\"must_keep_terms\":[\"量子点显示技术\",\"LCD\",\"OLED\",\"核心优势\"],\"intent\":\"advantage\",\"answer_aspects\":[\"色域表现指标\",\"色彩纯度参数\",\"能效转化效率\",\"材料稳定性寿命\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "HKMG和传统的二氧化硅多晶硅栅极结构相比，在晶体管性能上有哪些优势？",
+    "output": "{\"primary_query\":\"HKMG高介电常数金属栅极相比传统SiO₂多晶硅栅极的性能优势\",\"secondary_queries\":[\"High-k金属栅极 多晶硅栅 性能对比\",\"HKMG 漏电流 迁移率 可靠性提升\",\"高k金属栅极 传统晶体管 性能改善\"],\"must_keep_terms\":[\"HKMG\",\"高介电常数金属栅极\",\"SiO₂\",\"多晶硅栅极\",\"性能优势\"],\"intent\":\"comparison\",\"answer_aspects\":[\"栅极漏电流降低幅度\",\"载流子迁移率提升比例\",\"阈值电压稳定性改善效果\",\"器件可靠性提升倍数\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "基于机器学习的半导体工艺参数优化包含哪些主要步骤？",
+    "output": "{\"primary_query\":\"机器学习优化半导体工艺参数的主要步骤\",\"secondary_queries\":[\"半导体ML工艺参数优化流程\",\"半导体工艺参数优化各环节内容\",\"数据收集与特征工程半导体工艺优化\",\"机器学习模型训练半导体工艺优化\",\"半导体工艺参数优化回馈机制\"],\"must_keep_terms\":[\"机器学习\",\"半导体\",\"工艺参数优化\",\"步骤\"],\"intent\":\"process\",\"answer_aspects\":[\"优化流程\",\"各环节内容\",\"实现阶段\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "极低温环境下半导体的电导率会发生什么变化？",
+    "output": "{\"primary_query\":\"极低温环境下半导体电导率变化规律及原因\",\"secondary_queries\":[\"极低温 半导体 载流子浓度 电导率影响\",\"cryogenic temperature semiconductor conductivity change\",\"0K环境下半导体电导能力变化特征\",\"绝对零度 半导体 绝缘体行为 电导率\"],\"must_keep_terms\":[\"极低温\",\"半导体\",\"电导率\",\"载流子浓度\",\"0K\",\"绝对零度\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"电导率变化趋势\",\"载流子浓度对电导率的影响机制\",\"接近绝对零度时的电导率表现\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "在定向自组装工艺中使用的高χ值嵌段共聚物有什么优势，常见的有哪些材料类型？",
+    "output": "{\"primary_query\":\"高χ值嵌段共聚物 High-χ BCP DSA 定向自组装 优势 材料类型\",\"secondary_queries\":[\"高chi嵌段共聚物 Directed Self-Assembly 作用\",\"PS-b-PDMS 嵌段共聚物 DSA 应用\",\"高χ BCP 周期长度调控 优势\"],\"must_keep_terms\":[\"高χ值嵌段共聚物\",\"High-χ BCP\",\"定向自组装\",\"DSA\",\"材料类型\"],\"intent\":\"advantage\",\"answer_aspects\":[\"高χ值的定义\",\"高χ BCP减小自然周期尺寸的作用\",\"常见高χ BCP材料体系\",\"分子量控制要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "3D IC中使用硅通孔技术时面临的热挑战都有哪些？",
+    "output": "{\"primary_query\":\"3D IC 硅通孔技术 TSV 热挑战\",\"secondary_queries\":[\"三维集成电路 Through-Silicon Via 热管理挑战\",\"TSV 3D堆叠 热问题\",\"硅通孔 热阻 局部热点 问题\"],\"must_keep_terms\":[\"3D IC\",\"硅通孔技术\",\"TSV\",\"热挑战\"],\"intent\":\"challenge\",\"answer_aspects\":[\"3D IC堆叠热阻升高原因\",\"TSV局部热点危害\",\"层间材料CTE不匹配问题\",\"传统2D散热方案局限性\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "硅通孔技术和传统引线键合相比，在互连性能上有什么优势？",
+    "output": "{\"primary_query\":\"硅通孔技术 TSV 与引线键合 互连性能优势对比\",\"secondary_queries\":[\"Through-Silicon Via vs Wire Bonding performance advantage\",\"TSV 互连路径长度 信号传输延迟对比\",\"硅通孔 寄生电容 串扰噪声 参数对比\"],\"must_keep_terms\":[\"硅通孔技术\",\"TSV\",\"引线键合\",\"Wire Bonding\",\"互连性能\"],\"intent\":\"comparison\",\"answer_aspects\":[\"互连路径长度\",\"信号传输延迟\",\"寄生电容降幅\",\"串扰噪声降幅\",\"带宽提升幅度\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "半导体制造的蚀刻工艺中，选择比指的是什么？",
+    "output": "{\"primary_query\":\"半导体蚀刻工艺 选择比 定义 作用\",\"secondary_queries\":[\"蚀刻选择比 Selectivity 定义\",\"蚀刻工艺不同材料去除速率比\",\"硅Si 二氧化硅SiO2 蚀刻速率比\",\"高选择比 蚀刻工艺 作用\"],\"must_keep_terms\":[\"蚀刻工艺\",\"选择比\",\"Selectivity\",\"去除速率比\",\"Si\",\"SiO2\"],\"intent\":\"definition\",\"answer_aspects\":[\"选择比的定义\",\"选择比的计算方式\",\"高选择比的作用\",\"选择比的应用场景\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "5nm以下的先进半导体制程中，ALD技术面临哪些技术挑战？",
+    "output": "{\"primary_query\":\"ALD技术在5nm及以下制程面临的技术挑战\",\"secondary_queries\":[\"原子层沉积 先进节点 工艺瓶颈\",\"5nm以下制程 ALD 待解决问题\",\"ALD deposition rate thermal budget defect control <5nm node\"],\"must_keep_terms\":[\"ALD\",\"5nm以下制程\",\"技术挑战\",\"沉积速率\",\"热预算\",\"缺陷控制\"],\"intent\":\"challenge\",\"answer_aspects\":[\"沉积速率瓶颈\",\"热预算限制\",\"缺陷控制需求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "NIL纳米压印光刻技术目前已经在哪些领域实现商业化应用了？",
+    "output": "{\"primary_query\":\"NIL 纳米压印光刻技术 半导体领域 商业化应用领域\",\"secondary_queries\":[\"纳米压印光刻 已商业化应用领域\",\"NIL 应用场景 半导体\",\"NIL 光子芯片 生物传感器 MEMS 应用\",\"纳米压印 特殊应用领域\"],\"must_keep_terms\":[\"NIL\",\"纳米压印光刻技术\",\"商业化应用\"],\"intent\":\"application\",\"answer_aspects\":[\"NIL已实现商业化的应用领域\",\"NIL的适用应用场景\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "为什么二维材料适合用来制作柔性电子器件？",
+    "output": "{\"primary_query\":\"二维材料应用于柔性电子器件的核心优势\",\"secondary_queries\":[\"2D Materials flexible electronics advantages\",\"二维材料 柔性电子 力学电学特性\",\"柔性电子器件材料要求 二维材料适配性\",\"二维材料 弯曲刚度 载流子迁移率\"],\"must_keep_terms\":[\"二维材料\",\"柔性电子器件\",\"核心优势\"],\"intent\":\"advantage\",\"answer_aspects\":[\"极限厚度带来的机械优势\",\"电学-力学耦合特性优势\",\"范德华异质集成能力优势\",\"工艺兼容性优势\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "为什么应变工程可以提升硅材料的载流子迁移率？",
+    "output": "{\"primary_query\":\"应变工程提升硅材料载流子迁移率的作用机制\",\"secondary_queries\":[\"应变硅载流子迁移率提升原理\",\"Strain engineering improve Silicon Carrier Mobility mechanism\",\"拉伸应变 压缩应变 载流子散射影响\",\"应变对硅晶体带结构 电子态密度作用\"],\"must_keep_terms\":[\"应变工程\",\"硅\",\"载流子迁移率\",\"拉伸应变\",\"压缩应变\",\"能带结构\",\"电子态密度\",\"载流子散射\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"应变工程的核心作用原理\",\"拉伸应变对载流子迁移率的影响\",\"压缩应变对载流子迁移率的影响\",\"应变减少载流子散射的机制\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "设计EUV掩模的防护层时，需要考虑哪些会影响良率和掩模使用寿命的因素？",
+    "output": "{\"primary_query\":\"EUV掩模防护层 设计 良率 使用寿命 影响因素\",\"secondary_queries\":[\"极紫外掩模保护层 设计考量 良率提升 寿命延长\",\"EUV mask protective layer design yield service life factors\",\"EUV防护层 厚度 材料性质 化学稳定性 物理性能\"],\"must_keep_terms\":[\"EUV掩模\",\"防护层\",\"设计\",\"良率\",\"使用寿命\",\"影响因素\"],\"intent\":\"parameter\",\"answer_aspects\":[\"物理保护性能要求\",\"化学稳定性要求\",\"材料与厚度光学性能要求\",\"成本控制要求\",\"缺陷防护效果要求\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "相变存储器制造中使用的GeSbTe材料的结晶过程有哪些控制方法？",
+    "output": "{\"primary_query\":\"相变存储器制造中GeSbTe材料结晶过程的控制方法\",\"secondary_queries\":[\"GST结晶过程调控方法\",\"PCM GeSbTe结晶控制技术\",\"锗锑碲相变结晶工艺控制\",\"GeSbTe结晶动力学调控手段\"],\"must_keep_terms\":[\"GeSbTe\",\"相变存储器\",\"PCM\",\"结晶过程\",\"控制方法\"],\"intent\":\"process\",\"answer_aspects\":[\"材料组分精确调控方案\",\"热力学参数优化方法\",\"界面工程与应力调控手段\",\"纳米尺度限制效应技术\",\"外场辅助结晶方法\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "拉伸应变和压缩应变对应变硅的载流子迁移率分别有什么影响？",
+    "output": "{\"primary_query\":\"拉伸应变 压缩应变 应变硅 载流子迁移率 影响对比\",\"secondary_queries\":[\"拉伸应变提升电子迁移率幅度\",\"压缩应变增强空穴迁移率作用\",\"Strained Silicon tensile strain compressive strain carrier mobility\"],\"must_keep_terms\":[\"拉伸应变\",\"压缩应变\",\"应变硅\",\"载流子迁移率\",\"电子\",\"空穴\",\"50%\"],\"intent\":\"comparison\",\"answer_aspects\":[\"拉伸应变对电子迁移率的提升效果\",\"压缩应变对空穴迁移率的增强作用\",\"两种应变的适用场景差异\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "22nm后的FinFET工艺为什么要搭配HKMG技术使用？",
+    "output": "{\"primary_query\":\"22nm FinFET 鳍式场效应晶体管 搭配 HKMG 技术的原因\",\"secondary_queries\":[\"FinFET HKMG协同需求\",\"金属栅极功函数调控FinFET阈值电压\",\"22nm节点三维结构晶体管栅极方案\"],\"must_keep_terms\":[\"22nm\",\"FinFET\",\"鳍式场效应晶体管\",\"HKMG\",\"功函数\",\"阈值电压\"],\"intent\":\"mechanism\",\"answer_aspects\":[\"FinFET与HKMG的协同作用原理\",\"功函数调控阈值电压的效果\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "硅通孔技术相比传统平面互联方式有什么优势？",
+    "output": "{\"primary_query\":\"硅通孔 TSV 相比传统平面互联的优势\",\"secondary_queries\":[\"Through-Silicon Via 比金属布线优势\",\"3D IC TSV 互联性能提升点\",\"硅通孔互连密度 信号延迟优势\"],\"must_keep_terms\":[\"硅通孔\",\"TSV\",\"传统平面互联\",\"优势\"],\"intent\":\"advantage\",\"answer_aspects\":[\"互连密度提升\",\"信号延迟降低\",\"整体性能提升\",\"多模块集成灵活性\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "DSA工艺中降低线边缘粗糙度LER有哪些常用处理方法？",
+    "output": "{\"primary_query\":\"DSA工艺 降低线边缘粗糙度 LER 处理方法\",\"secondary_queries\":[\"Line Edge Roughness 降低方法 DSA\",\"紫外线辐照 DSA缺陷控制\",\"臭氧处理 DSA后处理 粗糙度\",\"BCP自组装 线边缘粗糙度优化\"],\"must_keep_terms\":[\"DSA\",\"LER\",\"线边缘粗糙度\"],\"intent\":\"process\",\"answer_aspects\":[\"降低DSA线边缘粗糙度的后处理工艺方法\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "不同机构开发的NIL纳米压印设备能达到的制程和性能参数是多少？",
+    "output": "{\"primary_query\":\"NIL设备 纳米压印 制程参数 加工能力 性能参数\",\"secondary_queries\":[\"NIL量产设备 最小制程 线宽\",\"NIL技术 缺陷密度 水平\",\"TEL 3D NAND NIL设备 制程\",\"中科院微电子所 纳米压印设备 加工能力\",\"Molecular Imprints Jet and Flash技术 缺陷密度\"],\"must_keep_terms\":[\"NIL\",\"纳米压印设备\",\"制程\",\"线宽\",\"缺陷密度\",\"15nm\",\"10nm\",\"0.1/cm²\"],\"intent\":\"parameter\",\"answer_aspects\":[\"不同机构NIL设备的制程参数\",\"NIL设备的加工能力参数\",\"NIL技术的缺陷密度性能参数\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "当前半导体缺陷检测领域面临的核心技术挑战是什么？有什么最新进展吗？",
+    "output": "{\"primary_query\":\"半导体缺陷检测核心技术挑战 2023年最新进展\",\"secondary_queries\":[\"分辨率-吞吐量权衡 Resolution-Throughput Tradeoff\",\"EUV掩模缺陷检测要求\",\"16nm以下缺陷检测技术难点\"],\"must_keep_terms\":[\"缺陷检测\",\"分辨率-吞吐量权衡\",\"Resolution-Throughput Tradeoff\",\"EUV掩模\",\"16nm\",\"1小时\",\"2023年\"],\"intent\":\"challenge\",\"answer_aspects\":[\"缺陷检测核心技术矛盾\",\"分辨率吞吐量权衡具体表现\",\"EUV掩模检测性能要求\",\"2023年缺陷检测技术进展\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "28nm以下工艺节点为什么要使用高介电常数金属栅极替代传统的SiO₂/多晶硅栅极结构？",
+    "output": "{\"primary_query\":\"28nm以下节点 高介电常数金属栅极 HKMG 替代传统SiO₂/多晶硅栅极的原因\",\"secondary_queries\":[\"High-k Metal Gate 对比传统poly-Si/SiO₂栅极的优势\",\"HKMG 栅极漏电流控制效果\",\"HKMG 功耗优化 迁移率提升表现\"],\"must_keep_terms\":[\"28nm以下节点\",\"高介电常数金属栅极\",\"HKMG\",\"SiO₂\",\"多晶硅栅极\",\"poly-Si\"],\"intent\":\"advantage\",\"answer_aspects\":[\"漏电流控制效果\",\"功耗优化能力\",\"载流子迁移率提升表现\",\"工艺兼容性\",\"成本优势\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "和传统光刻技术比，定向自组装技术有哪些优点？",
+    "output": "{\"primary_query\":\"定向自组装技术 对比传统光刻技术 优势\",\"secondary_queries\":[\"Directed Self-Assembly DSA 相比传统光刻的优点\",\"DSA相对传统光刻的优势\",\"定向自组装相较于传统光刻的好处\",\"半导体纳米图案化 定向自组装 vs 传统光刻\"],\"must_keep_terms\":[\"定向自组装\",\"DSA\",\"传统光刻技术\",\"半导体\",\"纳米图案\"],\"intent\":\"comparison\",\"answer_aspects\":[\"定向自组装与传统光刻的性能差异\",\"定向自组装相对传统光刻的优势点\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "双轴拉伸应变对电子迁移率的提升幅度有多大？",
+    "output": "{\"primary_query\":\"双轴拉伸应变对电子迁移率的提升效果参数\",\"secondary_queries\":[\"Biaxial Strain电子迁移率提升数值\",\"0.8%双轴应变电子迁移率提升比例\",\"双轴拉伸应变下硅能带变化对迁移率的影响\",\"(100)晶向硅片双轴应变迁移率数据\"],\"must_keep_terms\":[\"双轴拉伸应变\",\"电子迁移率\",\"提升幅度\"],\"intent\":\"parameter\",\"answer_aspects\":[\"双轴拉伸应变下的能带变化机制\",\"0.8%双轴应变对应的迁移率提升数值\",\"(100)晶向硅片的实验数据\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "电子束检测系统的组成部分和完整工作流程有哪些？",
+    "output": "{\"primary_query\":\"电子束检测系统 组成结构 工作流程\",\"secondary_queries\":[\"EBI 系统构成 工作步骤\",\"电子光学柱 检测器系统 样品台 组成\",\"电子束扫描 信号采集 图像生成 缺陷识别流程\",\"Electron Beam Inspection 工作流程\"],\"must_keep_terms\":[\"电子束检测\",\"EBI\",\"系统组成\",\"工作流程\"],\"intent\":\"process\",\"answer_aspects\":[\"电子光学柱的核心组件\",\"检测器系统的类型\",\"样品台的参数与功能\",\"四个工作阶段的具体操作内容\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "采用TSV技术的三维集成电路和传统二维集成电路比有什么不同？",
+    "output": "{\"primary_query\":\"TSV 三维集成电路 传统二维集成电路 性能对比\",\"secondary_queries\":[\"3D IC TSV 2D IC 互连密度对比\",\"硅通孔技术 延迟 集成度对比\",\"Through-Silicon Via 芯片尺寸制造成本对比\",\"三维集成电路相比二维的优势\"],\"must_keep_terms\":[\"TSV\",\"三维集成电路\",\"二维集成电路\",\"3D IC\",\"2D IC\"],\"intent\":\"comparison\",\"answer_aspects\":[\"TSV 3D IC与传统2D IC的性能差异\",\"互连密度、信号延迟、尺寸的对比\",\"集成度、成本、生产效率的差异\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "3nm以下技术节点的栅极氧化层为什么只能采用ALD工艺沉积？",
+    "output": "{\"primary_query\":\"3nm以下技术节点栅极氧化层采用ALD沉积的原因\",\"secondary_queries\":[\"3nm节点 HfO₂栅氧厚度公差要求\",\"ALD亚纳米级厚度控制能力\",\"CVD栅极氧化层厚度控制局限性\"],\"must_keep_terms\":[\"3nm以下技术节点\",\"栅极氧化层\",\"ALD\",\"HfO₂\",\"CVD\"],\"intent\":\"advantage\",\"answer_aspects\":[\"ALD自限制生长机制\",\"ALD厚度控制精度\",\"3nm节点栅极氧化层厚度公差要求\",\"CVD厚度波动范围\"]}"
+  },
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "为什么28nm及以下的半导体工艺都要用高介电常数金属栅极代替传统的多晶硅栅极？",
+    "output": "{\"primary_query\":\"高介电常数金属栅极 替代 传统多晶硅栅极 28nm及以下工艺 原因\",\"secondary_queries\":[\"HKMG 替代 Poly-Si栅极 必要性\",\"High-κ Metal Gate 多晶硅栅 工艺优劣势对比\",\"45nm以下工艺 栅极材料 技术瓶颈\",\"传统多晶硅栅极 局限性\"],\"must_keep_terms\":[\"高介电常数金属栅极\",\"HKMG\",\"多晶硅栅极\",\"Poly-Si\",\"28nm\",\"45nm\"],\"intent\":\"comparison\",\"answer_aspects\":[\"传统多晶硅栅极的技术局限性\",\"HKMG的核心技术创新点\",\"HKMG相对多晶硅栅的性能提升\",\"HKMG的适用工艺节点范围\"]}"
+  }
+]

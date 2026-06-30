@@ -1,0 +1,7 @@
+[
+  {
+    "instruction": "你是半导体 RAG 系统的 query planner。请把用户问题改写为适合向量库和 BM25 混合检索的 JSON 查询计划。必须保留专业术语、数值、缩写、材料名、工艺名和比较对象。",
+    "input": "高介电常数金属栅技术可以从哪些方面改善晶体管的性能？",
+    "output": "{\"primary_query\":\"高介电常数金属栅技术 改善晶体管性能\",\"secondary_queries\":[\"HKMG 晶体管性能提升\",\"High-k Metal Gate 晶体管性能改善\",\"高k金属栅 降低晶体管漏电流\",\"HKMG 抑制短沟道效应\",\"HKMG 提升晶体管电流驱动能力\"],\"must_keep_terms\":[\"高介电常数金属栅技术\",\"HKMG\",\"High-k Metal Gate\",\"晶体管\",\"性能改善\"],\"intent\":\"advantage\",\"answer_aspects\":[\"HKMG对晶体管性能的具体改善方向\",\"HKMG解决晶体管缩小的技术问题\",\"HKMG带来的晶体管性能提升点\"]}"
+  }
+]

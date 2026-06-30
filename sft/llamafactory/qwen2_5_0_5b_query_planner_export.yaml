@@ -1,0 +1,11 @@
+### model
+model_name_or_path: Qwen/Qwen2.5-0.5B-Instruct
+adapter_name_or_path: ./saves/qwen2.5-0.5b-query-planner/lora/sft
+template: qwen
+trust_remote_code: true
+
+### export
+export_dir: ./exports/qwen2.5-0.5b-query-planner-lora-merged
+export_size: 2
+export_device: cpu
+export_legacy_format: false

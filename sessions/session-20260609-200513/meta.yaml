@@ -1,0 +1,11 @@
+input_document_url: https://bytedance.larkoffice.com/docx/BSILdkiQnoPKDxxuOrVcFxcGnPg
+input_document_dir: sessions/session-20260609-200513/input_document
+skill_root: /Users/bytedance/Downloads/ttadk-codex-skills
+primary_skill: prd2case-web
+prd2case_mcp_available: false
+language: zh
+knowledge_base_path:
+customized_skill_path:
+notes:
+  - 未找到仓库根目录下的 .test_config.ini，将使用默认流程。
+  - 当前环境未暴露 prd2case MCP，先使用 skill 自带 fallback API 脚本生成初版产物。
